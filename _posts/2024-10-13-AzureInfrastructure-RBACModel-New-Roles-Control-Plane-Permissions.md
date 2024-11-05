@@ -24,9 +24,7 @@ Up until now, the classic trio of control plane privileged roles with direct con
 
 {: .box-note}
 Indirect elevation paths to control plane starting with less powerful roles are essentially unlimited, but that's a topic for different post.<br>
-To get a glimpse, see these excellent articles by Andy Robbins and Karl Fosaaen :
-- [https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418](https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418)
-- [https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-logic-app-contributor-escalation-to-root-owner](https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-automation-account-connections/)
+To get a glimpse, see these excellent articles by Andy Robbins and Karl Fosaaen:<br>- [https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418](https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418)<br>- [https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-logic-app-contributor-escalation-to-root-owner](https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-automation-account-connections/)
 
 Since then, two new roles have been added:
 
