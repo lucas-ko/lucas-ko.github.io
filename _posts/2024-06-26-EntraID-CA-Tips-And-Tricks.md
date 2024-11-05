@@ -16,7 +16,7 @@ author: Lukasz Kozubal
 
 Conditional Access policies are at the heart of Entra ID zero trust policy engine enforcement. They collect various signals (identity, device, network location, protocol, client app type, real time sign-in risk, accessed resource) and enable enforcement of company's resource access policies.
 
-![image](https://learn.microsoft.com/en-us/entra/identity/conditional-access/media/plan-conditional-access/conditional-access-overview-how-it-works.png)[^1]
+![image](https://learn.microsoft.com/en-us/entra/identity/conditional-access/media/plan-conditional-access/conditional-access-overview-how-it-works.png)
 [^1]: Source and credit  - [Microsoft](https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access)
 
 In the article below, I assume the reader has moderate level of familiarity with conditional access concepts.
