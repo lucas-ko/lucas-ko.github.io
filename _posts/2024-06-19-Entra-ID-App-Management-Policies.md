@@ -4,7 +4,10 @@ title: EntraID - Application management policies
 subtitle: 
 date: 2024-06-19T19:00:00.000Z
 tags:
-  - EntraID
+  - Microsoft EntraID
+  - Governance
+  - Security
+  - Hardening
 comments: true
 mathjax: true
 author: Lukasz Kozubal
@@ -130,7 +133,7 @@ Update-MgBetaPolicyDefaultAppManagementPolicy -BodyParameter $params
 Disconnect-MgGraph
 ```
 
-{: .box-success}
+{% capture notice-2 %}
 **Additional hardening - not for every environment!**<br>
 If you want to entirely disable the ability to create client secrets and rely only on asymmetric credentials, add the following code in the ```applicationRestrictions``` and ```servicePrincipalRestrictions``` sections:
 ```
@@ -142,6 +145,9 @@ restrictForAppsCreatedAfterDateTime = $null
 ```
 **Result?**<br> All additions of client secrets for all applications and service principals, regardless of their creation timestamp (```restrictForAppsCreatedAfterDateTime = $null``` is key here) are blocked! (In case you wonder, you can add credentials to service principals too! Only through PowerShell, but still!)
 ![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/ae79f49e-707f-4e0a-91fd-c818d89c3597)
+{% endcapture %}
+
+<div class="notice">{{ notice-2 | markdownify }}</div>
 
 ### Configuration effects
 
