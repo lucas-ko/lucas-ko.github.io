@@ -39,7 +39,7 @@ What if you create a group with ```isRoleAssignable``` attribute enabled and dec
 Are these groups usable elsewhere? Yes!
 
 Let's assume you have set of critical, baseline conditional access policies (e.g. require multi-factor authentication with specific strength for all users) in which you have to make some exclusions.<br>
-How do you usually do it? <br>You probably create ordinary (not role-assignable) security group and add some members. It is a common approach, with some residual risks stemming from the use of "standard" security or M365 group.<br>
+**How do you usually do it? **<br>You probably create ordinary (not role-assignable) security group and add some members. It is a common approach, with some residual risks stemming from the use of "standard" security or M365 group.<br>
 **Residual risk in this context is indirect delegation of control over these critical conditional access policy exclusions. Such indirect control is given to all Entra ID directory roles that are allowed to modify groups' membership.<br> To be more precise, 'tier 1 - management plane' roles have control over identity configuration elements that shall be exclusively reserved to 'tier 0 - control plane' ones.<br>
 Put it differently, you implicitly delegate scope of application of your critical conditional access policies!**
 
@@ -47,7 +47,7 @@ Using role-assignable group to control the CA policy exclusions would be more op
 
 ![344996266-c09cb278-2f05-43f5-81a7-5d5ebff98e1f](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/76269cd3-bc9f-4a0d-a327-a22414f293e7)
 
-Role-assignable groups can be used every time you worry about management scope of group membership or ownership, and you want to tighten it down. Scenarios like Microsoft Defender XDR unified RBAC role assignments, third party line of business application roles and many others.
+Role-assignable groups can be used every time you worry about management scope of group membership or ownership, and you want to tighten it down.<br> Scenarios like Microsoft Defender XDR unified RBAC role assignments, third party line of business application roles and many others.
 
 ## Things to watch out for
 
@@ -55,7 +55,7 @@ There is tenant-wide limit of 500 role-assignable groups. Keep that in mind and 
 
 ## Another option
 
-If you require even more granular control over group membership and ownership management, consider using role-assignable groups together with resticted administrative units. Check out the following cool guide by Jan Bakker - [Prevent Conditional Access bypass with Restricted Management Administrative Units in Entra ID](https://janbakker.tech/prevent-conditional-access-bypass-with-restricted-management-administrative-units-in-entra-id/).
+If you require even more granular control over group membership and ownership management, consider using role-assignable groups together with resticted administrative units, check out the following cool guide by Jan Bakker - [Prevent Conditional Access bypass with Restricted Management Administrative Units in Entra ID](https://janbakker.tech/prevent-conditional-access-bypass-with-restricted-management-administrative-units-in-entra-id/).
 
 ---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
