@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Entra ID Conditional Access - tips and tricks
-subtitle: Conditional Access policies are at the heart of Entra ID zero trust policy engine enforcement.
+subtitle:
 date: 2024-06-26T19:00:00.000Z
 tags:
   - Microsoft EntraID
@@ -14,7 +14,6 @@ mathjax: true
 author: Lukasz Kozubal
 ---
 
-## Intro
 Conditional Access policies are at the heart of Entra ID zero trust policy engine enforcement. They collect various signals (identity, device, network location, protocol, client app type, real time sign-in risk, accessed resource) and enable enforcement of company's resource access policies.
 
 ![image](https://learn.microsoft.com/en-us/entra/identity/conditional-access/media/plan-conditional-access/conditional-access-overview-how-it-works.png)[^1]
