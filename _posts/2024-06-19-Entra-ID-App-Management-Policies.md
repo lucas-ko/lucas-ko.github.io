@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EntraID - Application management policies
-subtitle: 
+subtitle: Application management policies allow for enhanced governance, management and control over application and service principal credentials in Entra ID tenant.
 date: 2024-06-19T19:00:00.000Z
 tags:
   - Microsoft EntraID
