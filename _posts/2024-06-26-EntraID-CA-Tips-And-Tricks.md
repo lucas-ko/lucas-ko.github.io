@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Entra ID Conditional Access - tips and tricks
-subtitle: 
+subtitle: Conditional Access policies are at the heart of Entra ID zero trust policy engine enforcement.
 date: 2024-06-26T19:00:00.000Z
 tags:
   - Microsoft EntraID
