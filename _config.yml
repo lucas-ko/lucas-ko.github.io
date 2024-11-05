@@ -22,8 +22,13 @@ author: Lukasz Kozubal
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Learn markdown: "https://www.markdowntutorial.com/"
-    
+    - AADInternals Blog: "https://aadinternals.com/"
+    - AzAdvertizer: "https://www.azadvertizer.net/"
+    - Dirk-jan Mollema Blog: "https://dirkjanm.io/"
+    - Entra ID Attack & Defense Playbook: "https://github.com/Cloud-Architekt/AzureAD-Attack-Defense"
+    - Entra.News: "https://entra.news/"
+    - NetSPI Blog: "https://www.netspi.com/blog/"
+    - SpecterOps Blog: "https://posts.specterops.io/"
 
 ################
 # --- Logo --- #
