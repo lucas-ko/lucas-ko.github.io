@@ -2,7 +2,7 @@
 layout: post
 title: Entra ID - Let's discuss role-assignable groups!
 subtitle: 
-date: 2024-06-26T19:00:00.000Z
+date: 2024-07-03T19:00:00.000Z
 tags:
   - Microsoft EntraID
   - Access Control
