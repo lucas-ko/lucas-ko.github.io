@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EntraID - Application management policies
+title: Entra ID - Application management policies
 subtitle:
 date: 2024-06-19T19:00:00.000Z
 tags:
