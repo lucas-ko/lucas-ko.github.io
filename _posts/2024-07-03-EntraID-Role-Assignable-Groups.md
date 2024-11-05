@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Entra ID - Let's discuss role-assignable groups!
-subtitle: 
+subtitle: Role-assignable groups in Entra ID are objects with subtle, but important difference, distinguishing them from other ordinary groups.
 date: 2024-07-03T19:00:00.000Z
 tags:
   - Microsoft EntraID
