@@ -15,18 +15,18 @@ mathjax: true
 author: Lukasz Kozubal
 ---
 
-Some interesting changes happened recently (within last year :wink:) in the area of highly privileged (i.e. control plane or Tier 0 in legacy terms) Azure infrastructure RBAC model roles.<br>
+Some interesting changes happened recently (within last year 😉) in the area of highly privileged (i.e. control plane or Tier 0 in legacy terms) Azure infrastructure RBAC model roles.<br>
 Up until now, the classic trio of control plane privileged roles with direct control over Azure infrastructure was limited to:
 
 - **_Owner_**
 - **_User Access Administrator_**
 - Entra ID **_Global Administrator_** (via [single-click elevation](https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin)❕)
 
->[!TIP]
->Indirect elevation paths to control plane starting with less powerful roles are essentially unlimited, but that's a topic for different post.<br>
->To get a glimpse, see these excellent articles by Andy Robbins and Karl Fosaaen :
->- [https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418](https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418)
->- [https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-logic-app-contributor-escalation-to-root-owner](https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-automation-account-connections/)
+{: .box-note}
+Indirect elevation paths to control plane starting with less powerful roles are essentially unlimited, but that's a topic for different post.<br>
+To get a glimpse, see these excellent articles by Andy Robbins and Karl Fosaaen :
+- [https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418](https://medium.com/specter-ops-posts/automating-azure-abuse-research-part-1-30b0eca33418)
+- [https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-logic-app-contributor-escalation-to-root-owner](https://www.netspi.com/blog/technical-blog/cloud-pentesting/azure-automation-account-connections/)
 
 Since then, two new roles have been added:
 
@@ -68,9 +68,8 @@ All right, it has _<ins>Microsoft.Authorization/roleAssignments/write</ins>_ con
 
 To summarize, **_Reservations Administrator_**, even though it can mange role assignment, it can do so only on Azure reservation objects. Technically it's still a control plane role, but greatly constrained - can't be assigned to resources and constructs other than reservation objects.
 
->[!TIP]
->To assign **_Reservations Administrator_** role, activate **_User Access Administrator_** (or better **_Role Based Access Control Administrator_**)  and use following Azure CLI command: ```az role assignment create --assignee "<assignee (user or group) ObjectID>" --scope "/providers/Microsoft.Capacity" --role "a8889054-8d42-49c9-bc1c-52486c10e7cd"```.<br>
->Reservations can then be managed in [Cost Management blade in Azure Portal](https://portal.azure.com/#view/Microsoft_Azure_CostManagement/Menu/~/reservations).
+{: .box-note}
+To assign **_Reservations Administrator_** role, activate **_User Access Administrator_** (or better **_Role Based Access Control Administrator_**)  and use following Azure CLI command: ```az role assignment create --assignee "<assignee (user or group) ObjectID>" --scope "/providers/Microsoft.Capacity" --role "a8889054-8d42-49c9-bc1c-52486c10e7cd"```.<br>Reservations can then be managed in [Cost Management blade in Azure Portal](https://portal.azure.com/#view/Microsoft_Azure_CostManagement/Menu/~/reservations).
 
 ## Role Based Access Control Administrator
 Onto the second one.<br>
@@ -107,13 +106,13 @@ However, the main value of this role comes from the capability to implement Azur
 
 How does it work? Let me describe an imaginary scenario as an example.
 
->Imagine Anna, who is tasked with administering and operating IAM for her company's Azure infrastructure resources.<br>
->Currently, every time she needs to make a change in role assignments, she has to logon to privileged access workstation, use Privileged Identity Management to activate **_User Access Administrator_** role at a correct scope, and perform the actual role assignment.<br>
->It's only first week of the month and Anna already had to perform over 20 unique role assignments.<br> 
->Tim, who is responsible for setting up the permissions for his team's DevOps pipeline, requests **_User Access Administrator_** to be assigned at the DevOps team subscription scope.<br>
->Anna knows the core tenets of zero trust (**least privilege**, **assume breach** and **verify explicitly**) and decides the request must be implemented in smarter fashion.<br>
->She decides to assign **_Role Based Access Control Administrator_** role to Tim at his team subscription scope.<br>
->Anna also decides the role will be constrained - Tim will be able to assign just the roles delegated to him and assign them only to service principals.<br>
+Imagine Anna, who is tasked with administering and operating IAM for her company's Azure infrastructure resources.<br>
+Currently, every time she needs to make a change in role assignments, she has to logon to privileged access workstation, use Privileged Identity Management to activate **_User Access Administrator_** role at a correct scope, and perform the actual role assignment.<br>
+It's only first week of the month and Anna already had to perform over 20 unique role assignments.<br> 
+Tim, who is responsible for setting up the permissions for his team's DevOps pipeline, requests **_User Access Administrator_** to be assigned at the DevOps team subscription scope.<br>
+Anna knows the core tenets of zero trust (**least privilege**, **assume breach** and **verify explicitly**) and decides the request must be implemented in smarter fashion.<br>
+She decides to assign **_Role Based Access Control Administrator_** role to Tim at his team subscription scope.<br>
+Anna also decides the role will be constrained - Tim will be able to assign just the roles delegated to him and assign them only to service principals.<br>
 
 Anna performs following actions in the Azure Portal:<br>
 
@@ -124,18 +123,14 @@ Anna performs following actions in the Azure Portal:<br>
   - She creates an assignment condition constraining Tim to assign only <b>Contributor</b> role to service principal objects
   ![376053455-f74482ec-831e-4165-9ee0-720208164e80](https://github.com/user-attachments/assets/5737327b-0165-4480-b5ba-f3d391c3f5a5)
 
-
 By performing above activities Anna accomplished few goals:
 
 - Enabled Tim to manage role assignments within applied guardrails. Tim can be more efficient now, instead of raising requests for role assignments and be blocked until their completion, he can now spend more time on deliverables that can move his team and company goals forward.
 - Anna can now spend less time on assigning roles and similarly to Tim, can focus on more important goals.
 - Anna did all of this in alignment with security best practices and principles. 
 
->[!NOTE]
->In which cases does **_Role Based Access Control_** fall shor when compared to **_User Access Administrator_**?
->
->- It can't (yet!) manage eligible role assignments in Privileged Identity Management
->- It can't create new, custom role assignments
+{: .box-note}
+In which cases does **_Role Based Access Control_** fall shor when compared to **_User Access Administrator_**? <br>- It can't (yet!) manage eligible role assignments in Privileged Identity Management<br>- It can't create new, custom role assignments
 
 ## Outro
 
