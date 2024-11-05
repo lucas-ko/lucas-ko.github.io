@@ -187,8 +187,7 @@ Addition of an asymmetric key on application object - tenant app management poli
 > Application objects exist only in a single tenant. They can be registered by an admin as a single-tenant, or - if created by SaaS software vendor - as a multi-tenant configuration. 
 > Multi-tenant applications are used as a template to create concrete instances in the form of service principals in the multiple tenants where users or admins have decided to grant consent and consequently sanctioned the use of an application.
 
-
-
+---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
 [![CC BY 4.0][cc-by-image]][cc-by]
@@ -196,4 +195,3 @@ All work is licensed under a [Creative Commons Attribution 4.0 International Lic
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
-
