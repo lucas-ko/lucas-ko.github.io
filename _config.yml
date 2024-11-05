@@ -260,6 +260,7 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll/footnotes
 
 # Based on:
 # Beautiful Jekyll / Dean Attali
