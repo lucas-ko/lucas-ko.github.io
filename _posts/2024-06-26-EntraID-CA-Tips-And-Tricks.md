@@ -83,7 +83,7 @@ However, it's not the case by default.
 
 **This frequently happens in token theft scenarios, where attackers attempt to reply stolen access/ID tokens from unauthorized locations.<br>**
 
-However, if you correctly define all IP address ranges of your clients[^2] and enable **'strictly enforce location policies'** session control in CA policies relying on network signals, you gain almost real-time revocation of these tokens. Strict location enforcement offers extra protection and considerable risk reduction against token replays outside of authorized network boundaries.
+However, if you correctly define all IP address ranges of your clients[^2] and enable **'strictly enforce location policies'** session control in CA policies relying on network signals, you gain almost real-time revocation of these tokens. Strict location enforcement offers extra protection and considerable risk reduction against token replays outside of authorized network boundaries.<br>
 [^2]:As seen by Entra ID and resource providers - not a trivial task!
 
 {: .box-note}
