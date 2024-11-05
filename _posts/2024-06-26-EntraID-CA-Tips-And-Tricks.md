@@ -49,7 +49,7 @@ Most of the legacy authentication protocols were disabled by Microsoft in 2022 (
 
 To reinforce legacy authentication blocking on service/resource-side (i.e. on Exchange Online or SharePoint Online)
 | M365 workload | How to disable legacy auth (PowerShell) | Privilege needed to execute the commands| Relevant documentation|
-|--|--|--|--|
+|:---|:---|:---|:---|
 | Sharepoint Online and OneDrive |  ```Import-Module Microsoft.Online.SharePoint.PowerShell```<br><br>```Connect-SPOService -URL <YOUR_TENANT_SPO_ADMIN_URL>```<br><br>```#Disable legacy authentication in Sharepoint Online/OneDrive```<br>```Set-SPOTenant -LegacyAuthProtocolsEnabled $False```   | [Sharepoint Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#sharepoint-administrator) Entra ID role  | [MS Learn](https://learn.microsoft.com/en-us/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps#-legacyauthprotocolsenabled) |
 | Exchange Online |  ```Import-Module ExchangeOnlineManagement```<br><br>```Connect-ExchangeOnline```<br><br>```#Enable modern authentication in ExO organization```<br>```Set-OrganizationConfig -OAuth2ClientProfileEnabled:$True```<br><br>```#Create policy disabling legacy authentication for all available protocols```<br>```New-AuthenticationPolicy -Name "Baseline - Block Basic Auth Protocols" -AllowBasicAuthAutodiscover:$False -AllowBasicAuthActiveSync:$False -AllowBasicAuthImap:$False -AllowBasicAuthMapi:$False -AllowBasicAuthOfflineAddressBook:$False -AllowBasicAuthOutlookService:$False -AllowBasicAuthPop:$False -AllowBasicAuthPowershell:$False -AllowBasicAuthReportingWebServices:$False -AllowBasicAuthRpc:$False -AllowBasicAuthSmtp:$False -AllowBasicAuthWebServices:$False```<br><br>```#Set default authentication policy for the organization```<br>```Set-OrganizationConfig -DefaultAuthenticationPolicy "Baseline - Block Basic Auth Protocols"```<br><br>```#Disable SMTP Basic auth at the transport layer```<br>```Set-TransportConfig -SmtpClientAuthenticationDisabled:$True```  | [Exchange Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#exchange-administrator) Entra ID role| [MS Learn](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#modify-authentication-policies) | 
 
@@ -86,14 +86,14 @@ However, it's not the case by default.
 However, if you correctly define all IP address ranges of your clients[^2] and enable **'strictly enforce location policies'** session control in CA policies relying on network signals, you gain almost real-time revocation of these tokens. Strict location enforcement offers extra protection and considerable risk reduction against token replays outside of authorized network boundaries.
 [^2]:As seen by Entra ID and resource providers - not a trivial task!
 
->[!NOTE]
->Only CAE capable clients and resources support this functionality. Compatibility list currently includes: Exchange Online, SharePoint Online, Microsoft Teams, Microsoft Graph and most of first party native and web clients.
+{: .box-note}
+Only CAE capable clients and resources support this functionality. Compatibility list currently includes: Exchange Online, SharePoint Online, Microsoft Teams, Microsoft Graph and most of first party native and web clients.
 
 1/ Define network locations (don't use countries - they don't work with CAE)<br>
 ![342677674-28753766-1cf0-42a0-8278-a5922b230707](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/9c5d91ff-692c-425d-95e6-693c5c3e937a)
 
->[!CAUTION]
->Before you enable **'strictly enforce location policies'** in conditional access policy **you must ensure that all IP addresses from which your users can access Microsoft Entra ID and resource providers are included in the IP-based named locations policy**. Otherwise, you will block your users.
+{: .box-warning}
+Before you enable **'strictly enforce location policies'** in conditional access policy **you must ensure that all IP addresses from which your users can access Microsoft Entra ID and resource providers are included in the IP-based named locations policy**. Otherwise, you will block your users.
 
 2/ Include locations in policy configuration<br>
 ![342712908-b5b24a66-8307-4234-a4f5-2cfde310b654](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/751af88d-002f-41d5-a117-f616eac0a121)
