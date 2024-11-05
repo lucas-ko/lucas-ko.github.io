@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: "Adventures in the ZeroTrust Cloudland"
+title: "Adventures in the Zero Trust Cloudland"
 
 # Your name to show in the footer
 author: Lukasz Kozubal
@@ -23,12 +23,14 @@ navbar-links:
   About Me: "aboutme"
   Resources:
     - AADInternals Blog: "https://aadinternals.com/"
+    - Awesome Entra: "https://aka.ms/awesome-entra"
     - AzAdvertizer: "https://www.azadvertizer.net/"
     - Dirk-jan Mollema Blog: "https://dirkjanm.io/"
     - Entra ID Attack & Defense Playbook: "https://github.com/Cloud-Architekt/AzureAD-Attack-Defense"
     - Entra.News: "https://entra.news/"
     - NetSPI Blog: "https://www.netspi.com/blog/"
     - SpecterOps Blog: "https://posts.specterops.io/"
+    - Zero Trust Core Principles: "https://pubs.opengroup.org/security/zero-trust-principles/"
 
 ################
 # --- Logo --- #
