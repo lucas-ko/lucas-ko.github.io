@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Entra ID - Let's discuss role-assignable groups!
-subtitle: Role-assignable groups in Entra ID are objects with subtle, but important difference, distinguishing them from other ordinary groups.
+subtitle:
 date: 2024-07-03T19:00:00.000Z
 tags:
   - Microsoft EntraID
@@ -14,8 +14,6 @@ comments: true
 mathjax: true
 author: Lukasz Kozubal
 ---
-
-## Introduction
 
 Role-assignable groups in Entra ID (P1 or P2 licensing required) are objects with subtle, but important difference, distinguishing them from other ordinary groups. Namely, during their creation, the ```isRoleAssignable``` attribute is set to ```True```.
 It is an immutable attribute, available only during the group creation.<br> Groups created as role-assignable stay as role-assignable for their entire lifecycle. With such attribute populated, these groups become eligible for direct assignments to Entra ID directory roles and more. 
