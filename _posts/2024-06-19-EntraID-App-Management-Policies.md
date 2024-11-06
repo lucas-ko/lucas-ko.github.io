@@ -133,9 +133,7 @@ Disconnect-MgGraph
 
 {: .box-note}
 **Additional hardening - not for every environment!**<br>
-If you want to entirely disable the ability to create client secrets and rely only on asymmetric credentials, add the following code in the ```applicationRestrictions``` and ```servicePrincipalRestrictions``` sections:
-
-{: .box-note}
+If you want to entirely disable the ability to create client secrets and rely only on asymmetric credentials, add the following code in the ```applicationRestrictions``` and ```servicePrincipalRestrictions``` sections:<br>
 ```
 @{
 restrictionType = "passwordAddition"
@@ -143,9 +141,7 @@ maxLifetime = $null
 restrictForAppsCreatedAfterDateTime = $null
 }
 ```
-
-{: .box-note}
-**Result?**<br>
+<br>**Result?**<br>
 All additions of client secrets for all applications and service principals, regardless of their creation timestamp (```restrictForAppsCreatedAfterDateTime = $null``` is key here) are blocked! (In case you wonder, you can add credentials to service principals too! Only through PowerShell, but still!)<br>
 ![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/ae79f49e-707f-4e0a-91fd-c818d89c3597)
 
