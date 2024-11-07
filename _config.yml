@@ -22,15 +22,21 @@ author: Lukasz Kozubal
 navbar-links:
   About Me: "aboutme"
   Resources:
+    - Azure Architecture Center: "https://learn.microsoft.com/en-us/azure/architecture/"
+    - Azure Well Architected Framework: "https://learn.microsoft.com/en-us/azure/well-architected/"
     - AADInternals Blog: "https://aadinternals.com/"
     - Awesome Entra: "https://aka.ms/awesome-entra"
     - AzAdvertizer: "https://www.azadvertizer.net/"
+    - Azure Cloud Adoption Framework: "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/"
     - Dirk-jan Mollema Blog: "https://dirkjanm.io/"
     - Entra ID Attack & Defense Playbook: "https://github.com/Cloud-Architekt/AzureAD-Attack-Defense"
     - Entra.News: "https://entra.news/"
+    - Microsoft Cybersecurity Reference Architectures: "https://learn.microsoft.com/en-us/security/adoption/mcra"
     - NetSPI Blog: "https://www.netspi.com/blog/"
+    - Office 365 for IT Pros: "https://office365itpros.com/blog/"
     - SpecterOps Blog: "https://posts.specterops.io/"
     - Zero Trust Core Principles: "https://pubs.opengroup.org/security/zero-trust-principles/"
+    - Zero Trust Guidance Center: "https://learn.microsoft.com/en-us/security/zero-trust/"
 
 ################
 # --- Logo --- #
