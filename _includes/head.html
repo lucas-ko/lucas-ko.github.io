@@ -176,4 +176,12 @@
 <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.84/darkreader.min.js"></script> 
 <script src="/assets/js/color-scheme.js"></script>
 
+<script>
+    (function() {
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+</script>
+
 </head>
