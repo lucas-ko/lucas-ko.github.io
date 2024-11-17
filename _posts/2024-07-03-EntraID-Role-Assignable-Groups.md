@@ -26,22 +26,22 @@ The resultant effect is the same, user gets the directory role, however, role-as
 
 ```mermaid
 flowchart LR
-    id1[**Before role-assignable groups. Each identity had to be assigned to a role individually. Not scalable!**]
-    Identity1["User identity1"]
-    Identity2["User identity2"]
-    Identity3["User identity3"]
-    EntraIDRoles["EntraIDRole"]
-    Identity1 --Directory role assignment-->EntraIDRoles
-    Identity2 --Directory role assignment-->EntraIDRoles
-    Identity3 --Directory role assignment-->EntraIDRoles
+id1[**Before role-assignable groups. Each identity had to be assigned to a role individually. Not scalable!**]
+Identity1["User identity1"]
+Identity2["User identity2"]
+Identity3["User identity3"]
+EntraIDRoles["EntraIDRole"]
+Identity1 --Directory role assignment-->EntraIDRoles
+Identity2 --Directory role assignment-->EntraIDRoles
+Identity3 --Directory role assignment-->EntraIDRoles
 ```
 
 ```mermaid
 flowchart LR
-    id1[**With role-assignable groups. One assignment per group! Better scalability!**]
-    Group1["Security or M365 role-assignable group"]
-    EntraIDRoles["EntraIDRole"]
-    Group1 --Directory role assignment-->EntraIDRoles
+id1[**With role-assignable groups. One assignment per group! Better scalability!**]
+Group1["Security or M365 role-assignable group"]
+EntraIDRoles["EntraIDRole"]
+Group1 --Directory role assignment-->EntraIDRoles
 ```
 
 <!---![345137616-b19f8a59-fba5-4164-9180-812ee2b52c7d](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/a9083bbc-85c7-455f-9727-708220c1ccaa)-->
