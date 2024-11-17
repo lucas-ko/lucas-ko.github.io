@@ -47,3 +47,25 @@
     window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.getElementById("dark-mode-toggle");
+    const body = document.body;
+    // Check for saved user preference
+    if (localStorage.getItem("dark-mode") === "enabled") {
+      body.classList.add("dark-mode");
+      toggleButton.innerHTML = "☀️";
+    }
+    toggleButton.addEventListener("click", function() {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("dark-mode", "enabled");
+        toggleButton.innerHTML = "☀️";
+      } else {
+        localStorage.removeItem("dark-mode");
+        toggleButton.innerHTML = "🌙";
+      }
+    });
+  });
+</script>
