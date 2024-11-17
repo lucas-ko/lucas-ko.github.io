@@ -60,7 +60,7 @@ What if you create a group with ```isRoleAssignable``` attribute enabled and dec
 Are these groups usable elsewhere? Yes!
 
 Let's assume you have set of critical, baseline conditional access policies (e.g. require multi-factor authentication with specific strength for all users) in which you have to make some exclusions.<br>
-**How do you usually do it? **<br>You probably create ordinary (not role-assignable) security group and add some members. It is a common approach, with some residual risks stemming from the use of "standard" security or M365 group.<br>
+**How do you usually do it?**<br>You probably create ordinary (not role-assignable) security group and add some members. It is a common approach, with some residual risks stemming from the use of "standard" security or M365 group.<br>
 **Residual risk in this context is indirect delegation of control over these critical conditional access policy exclusions. Such indirect control is given to all Entra ID directory roles that are allowed to modify groups' membership.<br> To be more precise, 'tier 1 - management plane' roles have control over identity configuration elements that shall be exclusively reserved to 'tier 0 - control plane' ones.<br>
 Put it differently, you implicitly delegate scope of application of your critical conditional access policies!**
 
