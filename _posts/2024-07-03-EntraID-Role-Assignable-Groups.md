@@ -12,6 +12,7 @@ tags:
   - Security
 comments: true
 mathjax: true
+mermaid: true
 author: Lukasz Kozubal
 ---
 
