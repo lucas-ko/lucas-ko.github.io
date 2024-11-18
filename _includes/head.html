@@ -1,4 +1,18 @@
 <head>
+
+  <script>
+    const theme = localStorage.getItem("dark-mode") || "disabled";
+    document.documentElement.dataset.theme = theme;
+  </script>
+
+  <script>
+    (function() {
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -175,13 +189,5 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
 <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.96/darkreader.min.js"></script> 
 <script src="/assets/js/color-scheme.js"></script>
-
-<script>
-    (function() {
-      if (localStorage.getItem('dark-mode') === 'enabled') {
-        document.documentElement.classList.add('dark-mode');
-      }
-    })();
-</script>
 
 </head>
