@@ -1,5 +1,9 @@
 <head>
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+  <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.96/darkreader.min.js"></script> 
+  <script src="/assets/js/color-scheme.js"></script>
+  
   <script>
     const theme = localStorage.getItem("dark-mode") || "enabled";
     document.documentElement.dataset.theme = theme;
@@ -185,9 +189,5 @@
       {% include {{ file }} %}
     {% endfor %}
   {% endif %}
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
-<script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.96/darkreader.min.js"></script> 
-<script src="/assets/js/color-scheme.js"></script>
 
 </head>
