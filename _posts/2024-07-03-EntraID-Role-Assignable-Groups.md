@@ -4,7 +4,7 @@ title: Entra ID - Let's discuss role-assignable groups!
 subtitle:
 date: 2024-07-03T19:00:00.000Z
 tags:
-  - Microsoft EntraID
+  - Microsoft Entra ID
   - Access Control
   - Least Privilege
   - Identity Management
