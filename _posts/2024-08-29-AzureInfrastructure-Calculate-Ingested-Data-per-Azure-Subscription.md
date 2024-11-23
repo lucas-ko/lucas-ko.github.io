@@ -5,7 +5,7 @@ subtitle:
 date: 2024-08-29T19:00:00.000Z
 tags:
   - Azure Infrastructure
-  - Operational Excelence
+  - Operational Excellence
   - Cost Efficency
   - FinOps
 comments: true
