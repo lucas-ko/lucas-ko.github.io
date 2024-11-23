@@ -4,7 +4,7 @@ title: Entra ID Conditional Access - tips and tricks
 subtitle:
 date: 2024-06-26T19:00:00.000Z
 tags:
-  - Microsoft EntraID
+  - Microsoft Entra ID
   - Conditional Access
   - Identity Management
   - Governance
