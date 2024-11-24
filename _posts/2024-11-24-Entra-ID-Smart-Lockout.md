@@ -30,6 +30,19 @@ The secret lies in clever management of account metadata responsible for lockout
 <sup>* \- the period of observation is not disclosed but it is fair to assume 30-90 days</sup>
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 flowchart TD
     Start@{ shape: circle, label: "Authentication attempt" }
     Is_IPFamiliar@{ shape: diamond, label: "Is source IP in familiar location?" }
