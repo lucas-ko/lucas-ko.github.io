@@ -31,7 +31,6 @@ The secret lies in clever management of account metadata responsible for lockout
 <sup>* \- the period of observation is not disclosed but it is fair to assume 30-90 days</sup>
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 flowchart LR
     Start@{ shape: circle, label: "Authentication attempt" }
     Is_IPFamiliar@{ shape: diamond, label: "Is source IP in familiar location?" }
