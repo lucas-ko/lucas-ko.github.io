@@ -95,12 +95,12 @@ Unfortunately yes, as currently you can't create an user object without specyfin
 
 ![image](https://github.com/user-attachments/assets/644a33b7-a658-4729-9596-58a602d71b43)
 
->[!NOTE]
->If you are using pass-through-authentication or ADFS (you really need that PHS project going!), above scenarios become a bit more complex as they involve real-time password verification on-premises. To avoid unnecessary account lockout, you should set lockout threshold in Entra ID to be lower that on-premises domain.
+{: .box-note}
+If you are using pass-through-authentication or ADFS (you really need that PHS project going!), above scenarios become a bit more complex as they involve real-time password verification on-premises. To avoid unnecessary account lockout, you should set lockout threshold in Entra ID to be lower that on-premises domain.
 
->[!TIP]
->Microsoft Entra ID also protects against attacks by analyzing more signals during each authentication attempt. Assessed data includes source IP reputation and associated malicious activity.
->If the sign-in is coming from an suspicious IP, regardless if credentials are correct, Entra returns [AADSTS50053](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aa
+{: .box-warning}
+Microsoft Entra ID also protects against attacks by analyzing more signals during each authentication attempt. Assessed data includes source IP reputation and associated malicious activity.
+If the sign-in is coming from an suspicious IP, regardless if credentials are correct, Entra returns [AADSTS50053](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aa
 
 ---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
