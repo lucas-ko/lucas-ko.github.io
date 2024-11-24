@@ -100,7 +100,7 @@ If you are using pass-through-authentication or ADFS (you really need that PHS p
 
 {: .box-warning}
 Microsoft Entra ID also protects against attacks by analyzing more signals during each authentication attempt. Assessed data includes source IP reputation and associated malicious activity.
-If the sign-in is coming from an suspicious IP, regardless if credentials are correct, Entra returns [AADSTS50053](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aa
+If the sign-in is coming from an suspicious IP, regardless if credentials are correct, Entra returns [AADSTS50053](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aadsts-error-codes)
 
 ## Useful resources:
 
