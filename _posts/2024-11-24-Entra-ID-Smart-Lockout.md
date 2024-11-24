@@ -10,8 +10,8 @@ tags:
   - Governance
   - Security
 comments: true
-mathjax: true
 mermaid: true
+full-width: true
 author: Lukasz Kozubal
 ---
 
