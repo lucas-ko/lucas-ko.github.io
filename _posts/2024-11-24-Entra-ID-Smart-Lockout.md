@@ -102,6 +102,12 @@ If you are using pass-through-authentication or ADFS (you really need that PHS p
 Microsoft Entra ID also protects against attacks by analyzing more signals during each authentication attempt. Assessed data includes source IP reputation and associated malicious activity.
 If the sign-in is coming from an suspicious IP, regardless if credentials are correct, Entra returns [AADSTS50053](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aa
 
+## Useful resources:
+
+- [Entra ID smart lockout](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout)
+- [Authentication error codes](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes#aadsts-error-codes)
+- [ADFS - extranet smart lockout](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection)
+
 ---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
