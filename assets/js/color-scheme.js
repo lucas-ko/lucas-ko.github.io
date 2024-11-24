@@ -25,8 +25,8 @@ function darkModeEnabled() {
   if (darkModeSelected() === true) {
     return true;
   }
-  //if (darkModeSelected() === null && darkModePreferred === true) {
-  //  return true;
+  if (darkModeSelected() === null && darkModePreferred === true) {
+    return true;
   }
   return false;
 }
