@@ -11,7 +11,6 @@ tags:
   - Security
 comments: true
 mermaid: true
-full-width: true
 author: Lukasz Kozubal
 ---
 
@@ -31,7 +30,7 @@ The secret lies in clever management of account metadata responsible for lockout
 <sup>* \- the period of observation is not disclosed but it is fair to assume 30-90 days</sup>
 
 ```mermaid
-flowchart LR
+flowchart TD
     Start@{ shape: circle, label: "Authentication attempt" }
     Is_IPFamiliar@{ shape: diamond, label: "Is source IP in familiar location?" }
     Fam_Is_AccountLocked@{ shape: diamond, label: "Is account locked for auth. attempts from familiar locations?" }
