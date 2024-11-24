@@ -46,36 +46,43 @@ The secret lies in clever management of account metadata responsible for lockout
 flowchart TD
     Start@{ shape: circle, label: "Authentication attempt" }
     Is_IPFamiliar@{ shape: diamond, label: "Is source IP in familiar location?" }
-    Fam_Is_AccountLocked@{ shape: diamond, label: "Is account locked for auth. attempts from familiar locations?" }
-    Unfam_Is_AccountLocked@{ shape: diamond, label: "Is account locked for auth. attempts from unknown locations?" }
-    Fam_Deny@{ shape: rounded, label: "Deny authentication" }
-    Unfam_Deny@{ shape: rounded, label: "Deny authentication" }
-    Unfam_CredsOK@{ shape: diamond, label: "Are credentials valid?" }
+    Fam_Is_AccountLocked@{ shape: diamond, label: "Is account locked for authentication attempts from familiar locations?" }
     Fam_CredsOK@{ shape: diamond, label: "Are credentials valid?" }
     Fam_AllowAuth@{ shape: rounded, label: "Accept authentication" }
+    Fam_Deny@{ shape: rounded, label: "Deny authentication" }
+    Fam_DenyTimer@{ shape: rounded, label: "Deny authentication" }
+    Fam_IncrementCounter@{ shape: rounded, label: "Increment bad authentication attempt counter for familiar locations" }
+    Fam_IncrementTimer@{ shape: rounded, label: "Increment account lockout time" }
+    Unfam_Is_AccountLocked@{ shape: diamond, label: "Is account locked for authentication attempts from unknown locations?" }
+    Unfam_Deny@{ shape: rounded, label: "Deny authentication" }
+    Unfam_DenyTimer@{ shape: rounded, label: "Deny authentication" }
+    Unfam_DenySuspicious@{ shape: rounded, label: "Deny authentication" }
+    Unfam_AADSTSCode@{ shape: rounded, label: "Return AADSTS50053 error code" }
+    Unfam_CredsOK@{ shape: diamond, label: "Are credentials valid?" }
     Unfam_AllowAuth@{ shape: rounded, label: "Accept authentication" }
-    Fam_AddIP@{ shape: rounded, label: "Add source IP to familiar locations" }
     Unfam_AddIP@{ shape: rounded, label: "Add source IP to familiar locations" }
-    Fam_IncrementCounter@{ shape: rounded, label: "Increment bad auth. attempt counter for familiar locations" }
-    Unfam_IncrementCounter@{ shape: rounded, label: "Increment bad auth. attempt counter for unknown locations" }
+    Unfam_IncrementCounter@{ shape: rounded, label: "Increment bad authentication attempt counter for unknown locations" }
+    Unfam_IncrementTimer@{ shape: rounded, label: "Increment account lockout time" }
     Unfam_Is_Suspicious@{ shape: diamond, label: "Is activity suspicious - matches known attack patterns?" }
 Start --> Is_IPFamiliar
 Is_IPFamiliar-->|Yes|Fam_Is_AccountLocked
 Is_IPFamiliar-->|No|Unfam_Is_AccountLocked
-Fam_Is_AccountLocked-->|Yes|Fam_Deny
+Fam_Is_AccountLocked-->|Yes|Fam_DenyTimer
 Fam_Is_AccountLocked-->|No|Fam_CredsOK
 Fam_CredsOK-->|No|Fam_Deny
 Fam_CredsOK-->|Yes|Fam_AllowAuth
-Fam_AllowAuth-->Fam_AddIP
+Fam_DenyTimer-->Fam_IncrementTimer
 Fam_Deny-->Fam_IncrementCounter
-Unfam_Is_AccountLocked-->|Yes|Unfam_Deny
+Unfam_Is_AccountLocked-->|Yes|Unfam_DenyTimer
 Unfam_Is_AccountLocked-->|No|Unfam_Is_Suspicious
-Unfam_Is_Suspicious-->|Yes|Unfam_Deny
+Unfam_Is_Suspicious-->|Yes|Unfam_DenySuspicious
 Unfam_Is_Suspicious-->|No|Unfam_CredsOK
 Unfam_CredsOK-->|No|Unfam_Deny
 Unfam_CredsOK-->|Yes|Unfam_AllowAuth
 Unfam_AllowAuth-->Unfam_AddIP
+Unfam_DenyTimer-->Unfam_IncrementTimer
 Unfam_Deny-->Unfam_IncrementCounter
+Unfam_DenySuspicious-->Unfam_AADSTSCode
 ```
 
 Smart lockout is enabled for every Entra ID customer but it's not configurable for free tenants.
