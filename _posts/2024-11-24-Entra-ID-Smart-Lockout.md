@@ -2,7 +2,7 @@
 layout: post
 title: Entra ID - smart lockout - protect your users from malicious account lockouts!
 subtitle:
-date: 2024-11-24T19:00:00.000Z
+date: 2024-11-24T17:00:00.000Z
 tags:
   - Microsoft Entra ID
   - Access Control
