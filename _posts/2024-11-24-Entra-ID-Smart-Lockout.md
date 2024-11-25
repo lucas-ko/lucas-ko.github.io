@@ -9,7 +9,6 @@ tags:
   - Identity Management
   - Governance
   - Security
-comments: true
 mermaid: true
 nav-short: true
 author: Lukasz Kozubal
