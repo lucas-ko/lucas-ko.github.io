@@ -9,7 +9,6 @@ tags:
   - Cost Efficency
   - FinOps
 comments: true
-mathjax: true
 author: Lukasz Kozubal
 ---
 
