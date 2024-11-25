@@ -8,7 +8,7 @@ tags:
   - Governance
   - Security
   - Hardening
-comments: true
+nav-short: true
 author: Lukasz Kozubal
 ---
 
