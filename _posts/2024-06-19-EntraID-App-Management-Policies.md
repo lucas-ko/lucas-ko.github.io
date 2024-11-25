@@ -9,7 +9,6 @@ tags:
   - Security
   - Hardening
 comments: true
-mathjax: true
 author: Lukasz Kozubal
 ---
 
