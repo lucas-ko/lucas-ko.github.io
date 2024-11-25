@@ -8,7 +8,6 @@ tags:
   - Operational Excellence
   - Cost Efficency
   - FinOps
-comments: true
 nav-short: true
 author: Lukasz Kozubal
 ---
