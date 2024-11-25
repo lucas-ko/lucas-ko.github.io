@@ -14,7 +14,7 @@ mermaid: true
 author: Lukasz Kozubal
 ---
 
-I recently had several conversations related to smart lockout feature in Entra ID.  Based on those, it occurred to me that inner workings of this feature are not as widely know as I assumed.<br>
+I recently had several conversations related to smart lockout feature in Entra ID.  Based on those, it occurred to me that inner workings of this feature are not as widely known as I assumed.<br>
 
 ## **TL;DR<br>**
 Smart lockout is a capability of Entra ID that makes a given user account appear locked out for certain entities, while allowing legitimate users to successfully authenticate.<br>
