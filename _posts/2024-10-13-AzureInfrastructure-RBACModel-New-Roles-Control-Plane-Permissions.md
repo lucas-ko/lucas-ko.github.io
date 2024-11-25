@@ -11,7 +11,6 @@ tags:
   - Governance
   - Security
 comments: true
-mathjax: true
 author: Lukasz Kozubal
 ---
 
