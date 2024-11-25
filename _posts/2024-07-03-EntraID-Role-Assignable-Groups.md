@@ -26,6 +26,19 @@ Think about the scenario where instead of having to assign each user individuall
 The resultant effect is the same, user gets the directory role, however, role-assignable groups have some additional security assurances applied by default.
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 flowchart LR
 id1[**Before role-assignable groups. Each identity had to be assigned to a role individually. Not scalable!**]
 Identity1["User identity1"]
@@ -38,6 +51,19 @@ Identity3 --Directory role assignment-->EntraIDRoles
 ```
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 flowchart LR
 id1[**With role-assignable groups. One assignment per group! Better scalability!**]
 Group1["Security or M365 role-assignable group"]
