@@ -99,7 +99,7 @@ You might say, _"That's cool, but what actually happens if I am hybrid and use p
 Great question! Let's consider two scenarios:
 
 **Scenario 1:<br>**
-- Attacker tries to brute force user password from location that is unfamiliar for the user, lockout counter exceeds the limit.
+- Attacker tries to brute force user password from location that is unknown for the user, lockout counter exceeds the limit.
 
 **Result:<br>**
 - Attacker is locked out. User authenticating from familiar location can authenticate successfully to all services relying on Entra ID, as well as to on-premises workloads.
@@ -109,7 +109,7 @@ Great question! Let's consider two scenarios:
 
 **Result:<br>**
 - Both attacker and legitimate user are locked out. During the lockout, user cannot successfully authenticate to all services relying on Entra ID (e.g., Microsoft 365, Azure Resource Manager, 3rd party integrated SaaS apps). 
-Because affected user's lockout status is not replicated to on-premises Active Directory, they can still successfully authenticate to all on-prem workloads relying on AD.
+Because affected user's lockout status is not replicated to on-premises Active Directory, they can still successfully authenticate to all on-prem workloads relying on Active Directory.
 
 **What about passwordless users? Are their account susceptible to brute force attempts and malicious lockouts?**<br>
 Unfortunately yes, as currently you can't create an user object without specyfing its password, below creation attempt via _New-MgBetaUser_ proves that.<br>
@@ -117,7 +117,7 @@ Unfortunately yes, as currently you can't create an user object without specyfin
 ![image](https://github.com/user-attachments/assets/644a33b7-a658-4729-9596-58a602d71b43)
 
 {: .box-note}
-If you are using pass-through-authentication or ADFS (you really need that PHS project going!), above scenarios become a bit more complex as they involve real-time password verification against on-premises Active Directory. To avoid unnecessary account lockouts, you should set lockout threshold in Entra ID to be lower than one set for on-premises environment.
+If you are using pass-through-authentication or ADFS (you really need that PHS project going!), above scenarios become a bit more complex as they involve real-time password verification against on-premises Active Directory. To avoid unnecessary account lockouts, you should set lockout threshold in Entra ID to be lower than one configured for on-premises Active Directory environment.
 
 {: .box-warning}
 Microsoft Entra ID also protects against attacks by analyzing additional signals during each authentication attempt. Assessed data includes source IP reputation and associated malicious activity.
