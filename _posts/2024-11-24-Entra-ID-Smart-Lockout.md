@@ -88,7 +88,7 @@ Unfam_DenySuspicious-->Unfam_AADSTSCode
 Smart lockout is enabled for every Entra ID customer but it's not configurable for free tenants.
 For tenants licensed with Premium P1 or P2, some configuration capabilities become available:
 
-**Lockout threshold **- Maximum number of bad authentication attempts over which the account is locked out. If the first sign-in after a lockout also fails, the account locks out again. 
+**Lockout threshold** - Maximum number of bad authentication attempts over which the account is locked out. If the first sign-in after a lockout also fails, the account locks out again. 
 
 **Lockout duration** - Minimum lockout duration in seconds (during initial lockout). Subsequent lockouts are increasingly longer.
 
