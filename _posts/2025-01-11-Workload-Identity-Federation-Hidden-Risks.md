@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Workload Identity Federation - great feature with hidden risks!
+title: Workload Identity Federation - great feature with some risks!
 subtitle:
 date: 2025-01-11T16:00:00.000Z
 tags:
