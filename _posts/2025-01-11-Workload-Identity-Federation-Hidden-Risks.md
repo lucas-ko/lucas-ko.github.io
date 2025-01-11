@@ -38,7 +38,8 @@ Traditionally, workload identity authentication from services external to Entra 
     'fontSize':'16px'
   }
 }}%%
-  sequenceDiagram 
+  sequenceDiagram
+  rect rgba(0, 0, 255, .1)
     participant EW as External workload
     participant EID as Entra ID
     participant Az as Azure resource
@@ -46,6 +47,7 @@ Traditionally, workload identity authentication from services external to Entra 
     EID ->> EID: 2. Verify client credentials.
     EID ->> EW: 3. Issue an access token.
     EW ->> Az: 4. Access resource.
+  end
 ```
 Workload identity federation enables you to eliminate operational tasks related to storage, secure handling in code and lifecycle management of authentication credentials.
 
@@ -62,6 +64,7 @@ Workload identity federation enables you to eliminate operational tasks related 
   }
 }}%%
   sequenceDiagram
+  rect rgba(0, 0, 255, .1)
     participant EW as External workload
     participant EIDP as External identity provider
     participant EID as Entra ID
@@ -74,6 +77,7 @@ Workload identity federation enables you to eliminate operational tasks related 
     EID->> EID: 5. Validate external assertion.
     EID ->> EW: 6. Return a "native" access token.
     EW ->> Az: 7. Access resource.
+  end
 ```
 This is a significant security advantage. However, you have to be aware that risks, which have been just eliminated, create new, sometimes implicit ones in other areas. 
 
@@ -99,12 +103,12 @@ To explain it further, consider following scenario:
     'fontSize':'16px'
   }
 }}%%
-  flowchart TD  
+  flowchart TD
     A["Attacker or administrator"] -- Controls --> B["External identity provider"] -- Issues --> C[Token] -- Assumes identity --> D["Service principal"]
-  subgraph TB ["Entra tenant boundary"]
+    subgraph TB ["Entra tenant boundary"]
        D["Service principal"] -- Direct access --> E[Resources]
-end
-A -. Indirect access .- E
+    end
+  A -. Indirect access .- E
 ```
 
 Did you notice that whoever controls external identity provider, whether with malicious intent or not, possesses the capability to access resources in your tenant?
