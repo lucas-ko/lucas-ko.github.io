@@ -12,6 +12,7 @@ tags:
   - Security
 mermaid: true
 nav-short: true
+full-width: true
 author: Lukasz Kozubal
 ---
 
