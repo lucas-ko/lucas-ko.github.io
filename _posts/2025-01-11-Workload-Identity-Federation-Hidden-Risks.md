@@ -15,8 +15,6 @@ nav-short: true
 author: Lukasz Kozubal
 ---
 
-### Intro
-
 The goal of this article is to present and explain implicit risks related to workload identity federation feature available in Entra ID and Azure infrastructure.<br>
 The upsides of using it are well known and advertised. What's more difficult to find, is the summary of main risks attached to use of this technology.<br>
 The rest of this article seeks to capture and describe these risks in a high-level fashion.
