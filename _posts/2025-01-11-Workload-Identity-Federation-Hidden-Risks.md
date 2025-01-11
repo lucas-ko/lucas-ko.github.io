@@ -27,17 +27,6 @@ It enables external workloads to assume the identity, privileges and access righ
 Traditionally, workload identity authentication from services external to Entra ID/Azure required use of client secrets or certificate credentials.
 
 ```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      fontFamily: "Helvetica, Arial, Calibri"
-      'primaryColor': '#D0D0D0',
-      'signalColor': '#909090',
-      'signalTextColor': '#808080',
-    }
-  }
-}%%
 sequenceDiagram 
     participant EW as External workload
     participant EID as Entra ID
