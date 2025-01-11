@@ -12,7 +12,6 @@ tags:
   - Security
 mermaid: true
 nav-short: true
-full-width: true
 author: Lukasz Kozubal
 ---
 
@@ -32,15 +31,14 @@ Traditionally, workload identity authentication from services external to Entra 
   init: {
     'theme': 'base',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#444444',
-      'primaryBorderColor': '#BB2528',
-      'lineColor': '#444444',
-      'secondaryColor': '#A56BCD',
-      'tertiaryColor': '#999999'
+      'primaryColor': '#0086FF',
+      'primaryTextColor': '#FFFFFF',
+      'lineColor': '#000000',
+      'darkMode': 'true'
     }
   }
-}%% sequenceDiagram
+}%%
+sequenceDiagram 
     participant EW as External workload
     participant EID as Entra ID
     participant Az as Azure resource
@@ -56,12 +54,10 @@ Workload identity federation enables you to eliminate operational tasks related 
   init: {
     'theme': 'base',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#444444',
-      'primaryBorderColor': '#BB2528',
-      'lineColor': '#444444',
-      'secondaryColor': '#A56BCD',
-      'tertiaryColor': '#999999'
+      'primaryColor': '#0086FF',
+      'primaryTextColor': '#FFFFFF',
+      'lineColor': '#000000',
+      'darkMode': 'true'
     }
   }
 }%% sequenceDiagram
@@ -95,12 +91,10 @@ To explain it further, consider following scenario:
   init: {
     'theme': 'base',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#444444',
-      'primaryBorderColor': '#BB2528',
-      'lineColor': '#444444',
-      'secondaryColor': '#A56BCD',
-      'tertiaryColor': '#999999'
+      'primaryColor': '#0086FF',
+      'primaryTextColor': '#FFFFFF',
+      'lineColor': '#000000',
+      'darkMode': 'false'
     }
   }
 }%% flowchart TD  
