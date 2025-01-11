@@ -35,7 +35,6 @@ Traditionally, workload identity authentication from services external to Entra 
       'primaryColor': '#D0D0D0',
       'signalColor': '#909090',
       'signalTextColor': '#808080',
-      'darkMode': 'true
     }
   }
 }%%
