@@ -37,7 +37,7 @@ The secret lies in clever management of account metadata responsible for lockout
       'primaryColor': '#BB2528',
       'primaryTextColor': '#FFF',
       'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229',
+      'lineColor': '#5B5B5B',
       'secondaryColor': '#A56BCD',
       'tertiaryColor': '#FFF'
     }
