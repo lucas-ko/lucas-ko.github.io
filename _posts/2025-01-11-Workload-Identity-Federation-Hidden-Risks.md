@@ -33,8 +33,8 @@ Traditionally, workload identity authentication from services external to Entra 
     'themeVariables': {
       'primaryColor': '#0086FF',
       'primaryTextColor': '#FFFFFF',
-      'textColor': '#FFFFFF',
-      'lineColor': '#FFFFFF',
+      'textColor': '#5b5b5b',
+      'lineColor': '#5b5b5b',
       'darkMode': 'true'
     }
   }
@@ -57,8 +57,8 @@ Workload identity federation enables you to eliminate operational tasks related 
     'themeVariables': {
       'primaryColor': '#0086FF',
       'primaryTextColor': '#FFFFFF',
-      'textColor': '#FFFFFF',
-      'lineColor': '#FFFFFF',
+      'textColor': '#5b5b5b',
+      'lineColor': '#5b5b5b',
       'darkMode': 'true'
     }
   }
@@ -95,8 +95,8 @@ To explain it further, consider following scenario:
     'themeVariables': {
       'primaryColor': '#0086FF',
       'primaryTextColor': '#FFFFFF',
-      'lineColor': '#000000',
-      'darkMode': 'false'
+      'lineColor': '#5b5b5b',
+      'darkMode': 'true'
     }
   }
 }%% flowchart TD  
