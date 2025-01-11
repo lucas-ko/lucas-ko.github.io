@@ -37,12 +37,12 @@
   {% endfor %}
 {% endif %}
 
-<script src="https://unpkg.com/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js"></script>
 <script>
   $(document).ready(function () {
     mermaid.initialize({
       startOnLoad:true,
-      theme: "forest",
+      theme: "dark",
     });
     window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
   });
