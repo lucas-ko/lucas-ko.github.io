@@ -32,15 +32,14 @@ Traditionally, workload identity authentication from services external to Entra 
     'theme': 'base',
     'themeVariables': {
       'primaryColor': '#BB2528',
-      'primaryTextColor': '#FFFF',
+      'primaryTextColor': '#444444',
       'primaryBorderColor': '#BB2528',
-      'lineColor': '#5B5B5B',
+      'lineColor': '#444444',
       'secondaryColor': '#A56BCD',
-      'tertiaryColor': '#FFFF'
+      'tertiaryColor': '#999999'
     }
   }
-}%%
-sequenceDiagram
+}%% sequenceDiagram
     participant EW as External workload
     participant EID as Entra ID
     participant Az as Azure resource
@@ -57,15 +56,14 @@ Workload identity federation enables you to eliminate operational tasks related 
     'theme': 'base',
     'themeVariables': {
       'primaryColor': '#BB2528',
-      'primaryTextColor': '#FFFF',
+      'primaryTextColor': '#444444',
       'primaryBorderColor': '#BB2528',
-      'lineColor': '#5B5B5B',
+      'lineColor': '#444444',
       'secondaryColor': '#A56BCD',
-      'tertiaryColor': '#FFFF'
+      'tertiaryColor': '#999999'
     }
   }
-}%%
-sequenceDiagram
+}%% sequenceDiagram
     participant EW as External workload
     participant EIDP as External identity provider
     participant EID as Entra ID
@@ -97,15 +95,14 @@ To explain it further, consider following scenario:
     'theme': 'base',
     'themeVariables': {
       'primaryColor': '#BB2528',
-      'primaryTextColor': '#FFFF',
+      'primaryTextColor': '#444444',
       'primaryBorderColor': '#BB2528',
-      'lineColor': '#5B5B5B',
+      'lineColor': '#444444',
       'secondaryColor': '#A56BCD',
-      'tertiaryColor': '#FFFF'
+      'tertiaryColor': '#999999'
     }
   }
-}%%
-flowchart TD  
+}%% flowchart TD  
     A["Attacker or administrator"] -- Controls --> B["External identity provider"] -- Issues --> C[Token] -- Assumes identity --> D["Service principal"]
 subgraph TB ["Entra tenant boundary"]
        D["Service principal"] -- Direct access --> E[Resources]
