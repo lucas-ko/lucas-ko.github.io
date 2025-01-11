@@ -26,59 +26,12 @@ It enables external workloads to assume the identity, privileges and access righ
 
 Traditionally, workload identity authentication from services external to Entra ID/Azure required use of client secrets or certificate credentials.
 
-```mermaid
-%%{init:{
-  'theme':'base',
-  'themeVariables': {
-    'primaryColor':'#6A7FAB',
-    'primaryTextColor':'#FAFBF9',
-    'primaryBorderColor':'#6A7FAB',
-    'lineColor':'#6A7FABCC',
-    'textColor':'#6A7FABCC',
-    'fontSize':'16px'
-  }
-}}%%
-  sequenceDiagram
-  rect rgba(0, 0, 255, .1)
-    participant EW as External workload
-    participant EID as Entra ID
-    participant Az as Azure resource
-    EW ->> EID: 1. Authenticate using client secret or certificate credentials and request an access token.
-    EID ->> EID: 2. Verify client credentials.
-    EID ->> EW: 3. Issue an access token.
-    EW ->> Az: 4. Access resource.
-  end
-```
+![image](https://github.com/user-attachments/assets/5f93dd24-b8b7-41f5-ba0b-9cd675e3c2c1)
+
 Workload identity federation enables you to eliminate operational tasks related to storage, secure handling in code and lifecycle management of authentication credentials.
 
-```mermaid
-%%{init:{
-  'theme':'base',
-  'themeVariables': {
-    'primaryColor':'#6A7FAB',
-    'primaryTextColor':'#FAFBF9',
-    'primaryBorderColor':'#6A7FAB',
-    'lineColor':'#6A7FABCC',
-    'textColor':'#6A7FABCC',
-    'fontSize':'16px'
-  }
-}}%%
-  sequenceDiagram
-  rect rgba(0, 0, 255, .1)
-    participant EW as External workload
-    participant EIDP as External identity provider
-    participant EID as Entra ID
-    participant EOIDC as OpenID Connect Issuer URL   
-    participant Az as Azure resource
-    EW ->> EIDP: 1. Authenticate and request an "external" token.
-    EIDP ->> EW: 2. Issue an "external" token.
-    EW ->> EID: 3. Request a "native" access token, provide an "external" token as JWT assertion.
-    EID->> EOIDC: 4. Query external OIDC Issuer URL to obtain token validation metadata.
-    EID->> EID: 5. Validate external assertion.
-    EID ->> EW: 6. Return a "native" access token.
-    EW ->> Az: 7. Access resource.
-  end
-```
+![image](https://github.com/user-attachments/assets/ad0f1999-b3b6-493e-a644-2b1f1aa8d489)
+
 This is a significant security advantage. However, you have to be aware that risks, which have been just eliminated, create new, sometimes implicit ones in other areas. 
 
 ### Overview of risks:
