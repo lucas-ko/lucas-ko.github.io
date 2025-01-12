@@ -117,7 +117,7 @@ Anna performs following actions in the Azure Portal:<br>
   ![376052465-96e862f6-5104-49c9-91f7-01892455d9a1](https://github.com/user-attachments/assets/f39f8706-92aa-444d-9c51-7d1b873462cf)
 
 
-  - She creates an assignment condition constraining Tim to assign only <b>Contributor</b> role to service principal objects
+  - She creates an assignment condition constraining Tim to assign only <b>Contributor</b> role to service principal objects<br>
   ![376053455-f74482ec-831e-4165-9ee0-720208164e80](https://github.com/user-attachments/assets/5737327b-0165-4480-b5ba-f3d391c3f5a5)
 
 By performing above activities Anna accomplished few goals:
