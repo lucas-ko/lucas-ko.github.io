@@ -26,11 +26,11 @@ It enables external workloads to assume the identity, privileges and access righ
 
 Traditionally, workload identity authentication from services external to Entra ID/Azure required use of client secrets or certificate credentials.
 
-![image](https://github.com/user-attachments/assets/5f93dd24-b8b7-41f5-ba0b-9cd675e3c2c1)
+![image](https://blog.identitylab.ch/assets/img/WIF1.png)
 
 Workload identity federation enables you to eliminate operational tasks related to storage, secure handling in code and lifecycle management of authentication credentials.
 
-![image](https://github.com/user-attachments/assets/ad0f1999-b3b6-493e-a644-2b1f1aa8d489)
+![image](https://blog.identitylab.ch/assets/img/WIF2.png)
 
 This is a significant security advantage. However, you have to be aware that risks, which have been just eliminated, create new, sometimes implicit ones in other areas. 
 
@@ -44,25 +44,7 @@ Effectively, you are trusting an external software to correctly authenticate an 
 
 To explain it further, consider following scenario:
 
-```mermaid
-%%{init:{
-  'theme':'base',
-  'themeVariables': {
-    'primaryColor':'#6A7FAB',
-    'primaryTextColor':'#FAFBF9',
-    'primaryBorderColor':'#6A7FAB',
-    'lineColor':'#6A7FABCC',
-    'textColor':'#6A7FABCC',
-    'fontSize':'16px'
-  }
-}}%%
-  flowchart TD
-    A["Attacker or administrator"] -- Controls --> B["External identity provider"] -- Issues --> C[Token] -- Assumes identity --> D["Service principal"]
-    subgraph TB ["Entra tenant boundary"]
-       D["Service principal"] -- Direct access --> E[Resources]
-    end
-  A -. Indirect access .- E
-```
+![image](https://blog.identitylab.ch/assets/img/WIF3.png)
 
 Did you notice that whoever controls external identity provider, whether with malicious intent or not, possesses the capability to access resources in your tenant?
 
