@@ -16,7 +16,7 @@ author: Lukasz Kozubal
 ---
 
 The goal of this article is to present and explain implicit risks related to workload identity federation feature available in Entra ID and Azure infrastructure.<br>
-The upsides of using it are well known and advertised. What's more difficult to find, is the summary of main risks attached to use of this technology.<br>
+The upsides of using it are well known and advertised. What's more difficult to find, is the summary of main risks attached to the use of this technology.<br>
 The rest of this article seeks to capture and describe these risks in a high-level fashion.
 
 ### What is workload identity federation?
@@ -32,7 +32,7 @@ Workload identity federation enables you to eliminate operational tasks related 
 
 ![image](https://blog.identitylab.ch/assets/img/WIF2.png)
 
-This is a significant security advantage. However, you have to be aware that risks, which have been just eliminated, create new, sometimes implicit ones in other areas. 
+This is a significant security advantage. However, you have to be aware that by eliminating some risks, you create new, implicit ones in other areas.
 
 ### Overview of risks:
 
