@@ -133,6 +133,7 @@ This is a general risk which applies in most of the environments and identity ty
 - Greater that necessary impact to data assets in case of materialization of risks #2 and #3.
 
 ### Useful external resources:
+
 - [Access cloud resources across Azure tenants without using secrets (Microsoft Entra Identity Platform Blog)](https://devblogs.microsoft.com/identity/access-cloud-resources-across-tenants-without-secrets/)
 - [Workload Identity Federation (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation)
 - [Identify and prevent abuse of Managed Identities with Federated Credentials from unauthorized entities (Thomas Naunheim)](https://www.cloud-architekt.net/identify-prevent-abuse-uami-fedcreds/)
