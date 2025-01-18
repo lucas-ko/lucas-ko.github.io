@@ -57,12 +57,12 @@ Ask the following questions:
 
 Ulitmately answer the question - based on the evidences you gathered and analysis you performed, is the resultant residual risk within the risk tolerance for your organization?
 
-**Example mitigating control(s):** 
+**Example mitigating control(s):** <br>
 - Use vendor best practices to harden configuration of the external IdP (e.g. use phish-resistant authentication for privileged accounts, reduce the attack surface by turning off not required functionality).
 - Employ robust operational processes (e.g. if on-prem, IaaS or PaaS - patch management, vulnerability management, for all architectures - identity lifecycle management, secured admistrative paths).
 - Use least privilege when assigning permissions to an entity relying on workload identity federation (see risk #3).
 
-**Potential impact if left unmitigated:**
+**Impact if left unmitigated:**
 - Compromise of external IdP leads to unauthorized access to all resources the federated workload identity had access to.
 
 -------------------------
@@ -70,13 +70,13 @@ Ulitmately answer the question - based on the evidences you gathered and analysi
 ### **Risk #2 - Living off the land for persistence and data/resource access**<br>
 Abuse of the legitimate, built-in platform features allowing attackers to obtain persistence in your tenant. 
 
-**How to assess it:**<br>
+**How to assess it:** <br>
 To get the idea about the probability of this risk materializing, assess the current state of defensive measures and their robustness.
 - How well do you protect the control plane roles (Directory - Global Admin, Application Admin, Cloud Application Admin; Infrastructure - Owner, User Access Administrator, Role Based Access Administrator and many others? Do you use just-in-time assignments? Does the elevation-to-role process require approvals?
 - How robust is the policy enforcement engine (Entra ID: conditional access policies)? For critical-admin actions - do you require compliant devices? Phishing-resistant authentication? Require token-to-device cryptographic bindings? What about policies for workload (non-human) identities?
 - How well do you control and vet permission consent grants for applications?
 
-**Example compensating controls:**<br>
+**Example compensating controls:** <br>
 - A set of robust and effective processes is needed. As a preventative measure - employ a change management process, where each configuration change will be assessed and vetted. Additionally, build an effective detection mechanism that responds and remediates every configuration change that doesn't have a match in the log of approved changes.
 - Implement Azure Policies to apply governance to federated identity token issuers (applicable only for user-assigned managed identities in Azure infrastructure context). Example policies [here](https://www.azadvertizer.net/azpolicyadvertizer/2571b7c3-3056-4a61-b00a-9bc5232234f5.html), [here](https://www.azadvertizer.net/azpolicyadvertizer/fd1a8e20-2c4f-4a6c-9354-b58d786d9a1f.html) and [here](https://www.azadvertizer.net/azpolicyadvertizer/ae62c456-33de-4dc8-b100-7ce9028a7d99.html).
 - Azure Policies can also block the use of workload identity federation at a designated scope (again, only for user-assigned managed identities in Azure infrastructure context). Details [here](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-block-using-azure-policy).
@@ -113,7 +113,7 @@ AzureActivity
 | project TimeGenerated, EventSubmissionTimestamp,Caller, CallerIpAddress, Action = AdditionalInformation.action, Scope = AdditionalInformation.scope
 ```
 
-**Impact if left unmitigated:**<br>
+**Impact if left unmitigated:**
 - Attackers living off the land and obtaining persistence by planting rouge federated credentials on applications or service principals.
 
 -------------------------
@@ -121,15 +121,15 @@ AzureActivity
 ### **Risk #3 - Absence of least privilege**<br>
 Least privilege principle (one of the baseline pillars of any Zero Trust framework) not followed.
 
-**How to assess it:**<br>
+**How to assess it:** <br>
 This is a general risk which applies in most of the environments and identity types.
 - Check the permissions assigned to the service principal in your tenant. Most important places to check are: Entra ID roles, Azure RBAC roles, roles in SaaS workloads (Exchange Online, Microsoft Defender (both unified and workload-specific RBAC), Purview, 3rd party SaaS apps).
 - Assess the permissions assigned against the permissions actually required to achieve a specific business or technical goal.
 
-**Example mitigating control:**<br>
+**Example mitigating control:** <br>
 - Ensure robust assessment process that vet permissions thoroughly before consenting to and assigning them.<br> For example, if considering access to specific sites in SharePoint Online in Microsoft Graph, don't simply assign [Sites.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#sitesreadwriteall), use [Sites.Selected or more granular scopes](https://learn.microsoft.com/en-us/graph/permissions-selected-overview?tabs=http#scopes) instead!
 
-**Impact if left unmitigated:**<br>
+**Impact if left unmitigated:**
 - Greater that necessary impact to data assets in case of materialization of risks #2 and #3.
 
 ### Useful external resources:
