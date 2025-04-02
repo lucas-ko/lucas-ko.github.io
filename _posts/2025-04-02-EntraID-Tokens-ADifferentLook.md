@@ -35,6 +35,7 @@ However, if Security Operations team perform an admin revocation of user tokens 
 It is therefore imperative that SOC teams incorporate not only user password reset, but also admin revocation of refresh tokens, as part of their identity compromise response playbooks.<br>
 
 Below table summarizes what happens to tokens/cookies after administrative actions:
+
 | Action | Password-based token | Password-based session cookie | Non-password-based token | Non-password-based session cookie |
 |:---|:---|:---|:---|:---|
 | Admin forces password reset | Revoked  | Revoked  | Valid | Valid |
