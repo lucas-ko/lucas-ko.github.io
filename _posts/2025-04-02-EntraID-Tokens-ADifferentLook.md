@@ -17,28 +17,26 @@ In this article, I would rather like to consider specific sub-types of refresh t
 
 ### Tokens vs cookies - how do they differ?
 Refresh tokens and session cookies are different types of long-lived tokens.<br> 
-They are issued from a single root authentication event. Usually, it's an interactive authentication in the case of human operated identities.<br>
-Key difference between them?<br>
-- Refresh tokens are issued when interacting with applications using OAuth2 framework (i.e. mobile, desktop apps and web applications calling secured APIs in the background).<br>
-- Session cookies are issued when interacting with, web (HTTP-based) applications. In this article, I am only considering session cookies issued by Entra ID to Microsoft first party web apps.<br>
+They are issued from a single root authentication event. Usually, it's an interactive authentication in the case of human operated identities.<br><br>
+Key difference between them?
+- **Refresh tokens** are issued when interacting with applications using OAuth2 framework (i.e. mobile, desktop apps and web applications calling secured APIs in the background).<br>
+- **Session cookies** are issued when interacting with, web (HTTP-based) applications. In this article, I am only considering session cookies issued by Entra ID to Microsoft first party web apps.<br>
 
 ### Differences within the family
-Now, lets dive directly into their sub-types.<br>
 We can distinguish password-based and non-password-based tokens/cookies. 
-
-Password-based refresh tokens and session cookies are issued and tied to an interactive authentication that used password as part of the authentication flow.<br>
-As you might infer, non-password-based tokens/cookies are issued and tied to an interactive authentication that didn't use password as part of the authentication flow.<br>
+**Password-based refresh tokens and session cookies** are issued and tied to an interactive authentication that used password as part of the authentication flow.<br>
+As you might infer, **non-password-based tokens/cookies** are issued and tied to an interactive authentication that didn't use password as part of the authentication flow.<br>
 Examples include FIDO2 security key or passkey-based authentication, using Microsoft Authenticator passwordless phone-based sign-in, Temporary Access Pass, certificate based authentication, as well as SMS-based or recently added QR code sign-in.<br>
 
 ### Impact on incident response
 All cool, but let's ask the important question - what happens if a Security Operations team, performing a response to a user identity compromise, decide to just reset the user's password. Does this action remediate the risk well enough?<br>
-Unfortunately not - all non-password-based tokens and session cookies tied to the compromised user identity will stay alive and active. Only password-based post-authentication artifacts are revoked!<br>
+**Unfortunately not - all non-password-based tokens and session cookies tied to the compromised user identity will stay alive and active. Only password-based post-authentication artifacts are revoked!**<br>
 However, if Security Operations team perform an admin revocation of user tokens - all kinds of tokens and cookies, regardless of their sub-type, are revoked.<br>
 It is therefore imperative that SOC teams incorporate not only user password reset, but also admin revocation of refresh tokens, as part of their identity compromise response playbooks.<br>
 
 Below table summarizes what happens to tokens/cookies after administrative actions:
 | Action | Password-based token | Password-based session cookie | Non-password-based token | Non-password-based session cookie |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | Admin forces password reset | Revoked  | Revoked  | Valid | Valid |
 | Admin revokes all refresh tokens | Revoked  | Revoked  | Revoked  | Revoked  |
 
