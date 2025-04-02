@@ -53,7 +53,7 @@ Invoke-MgBetaInvalidateAllUserRefreshToken -UserId <UserPrincipalName or object 
 
 ClickOps (GUI) way:<br>
 
-![image](https://github.com/lucas-ko/lucas-ko.github.io/blob/master/assets/img/RevokeSessions.png)
+![image](https://blog.identitylab.ch/assets/img/RevokeSessions.png)
 
 
 ### What about external (B2B) users? 
