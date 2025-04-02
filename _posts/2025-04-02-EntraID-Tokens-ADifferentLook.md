@@ -23,7 +23,7 @@ Key difference between them?
 - **Session cookies** are issued when interacting with, web (HTTP-based) applications. In this article, I am only considering session cookies issued by Entra ID to Microsoft first party web apps.<br>
 
 ### Differences within the family
-We can distinguish password-based and non-password-based tokens/cookies. 
+We can distinguish password-based and non-password-based tokens/cookies.<br>
 **Password-based refresh tokens and session cookies** are issued and tied to an interactive authentication that used password as part of the authentication flow.<br>
 As you might infer, **non-password-based tokens/cookies** are issued and tied to an interactive authentication that didn't use password as part of the authentication flow.<br>
 Examples include FIDO2 security key or passkey-based authentication, using Microsoft Authenticator passwordless phone-based sign-in, Temporary Access Pass, certificate based authentication, as well as SMS-based or recently added QR code sign-in.<br>
