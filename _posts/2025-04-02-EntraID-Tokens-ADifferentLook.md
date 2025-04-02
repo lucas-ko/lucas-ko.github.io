@@ -14,7 +14,7 @@ author: Lukasz Kozubal
 
 # Entra ID tokens and cookies - a different perspective.
 
-No, I am not going to bore you to death with another article on how refresh tokens, access tokens and session cookies work and how their implementation in Microsoft Entra ID looks like.<br>
+No, I am not going to bore you to tears with another article on how refresh tokens, access tokens and session cookies work and how their implementation in Microsoft Entra ID looks like.<br>
 In this article, I would rather like to consider specific sub-types of refresh tokens and session cookies and under which circumstances can they be revoked (or not!).
 
 ### Tokens vs cookies - how do they differ?
