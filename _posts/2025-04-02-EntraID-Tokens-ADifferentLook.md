@@ -38,8 +38,8 @@ Below table summarizes what happens to tokens/cookies after administrative actio
 
 | Action | Password-based token | Password-based session cookie | Non-password-based token | Non-password-based session cookie |
 |:---|:---|:---|:---|:---|
-| Admin forces password reset | Revoked  | Revoked  | Valid | Valid |
-| Admin revokes all refresh tokens | Revoked  | Revoked  | Revoked  | Revoked  |
+| **Admin forces password reset** | **Revoked** | **Revoked**  | Valid | Valid |
+| **Admin revokes all refresh tokens** | **Revoked**  | **Revoked**  | **Revoked ** | **Revoked ** |
 
 ### How to perform admin revocation of all tokens and session cookies?
 
@@ -53,7 +53,7 @@ Invoke-MgBetaInvalidateAllUserRefreshToken -UserId <UserPrincipalName or object 
 
 ClickOps (GUI) way:<br>
 
-![RevokeSessions](https://github.com/lucas-ko/lucas-ko.github.io/blob/master/assets/img/RevokeSessions.png)
+![image](https://github.com/lucas-ko/lucas-ko.github.io/blob/master/assets/img/RevokeSessions.png)
 
 
 ### What about external (B2B) users? 
