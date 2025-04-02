@@ -61,10 +61,10 @@ As an admin of a resource tenant, you can't revoke the tokens and session cookie
 
 ## Useful resources:
 
-- [Refresh tokens in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/refresh-tokens)
-- [Authentication methods reference claim in access tokens](https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference#amr-claim)
 - [Entra ID directory roles with invalidate all refresh tokens permission](https://www.azadvertizer.net/azentraidroleactions/microsoft.directory_users_invalidateallrefreshtokens.html)
 - [MS Graph permissions - user: invalidateAllRefreshTokens](https://learn.microsoft.com/en-us/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&tabs=http#permissions)
+- [Refresh tokens in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/refresh-tokens)
+- [Authentication methods reference claim in access tokens](https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference#amr-claim)
 
 -------------------------------------------------------------------------------------------
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
