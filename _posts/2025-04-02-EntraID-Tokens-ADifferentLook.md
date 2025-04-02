@@ -35,7 +35,7 @@ However, if Security Operations team perform an admin revocation of user tokens 
 It is therefore imperative that SOC teams incorporate not only user password reset, but also admin revocation of refresh tokens, as part of their identity compromise response playbooks.<br>
 
 {: .box-note}
-To build comprehensive identity compromise reponse playbooks, familiarize yourself with [phishing](https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing), [password spray](https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-password-spray) and [token theft](https://learn.microsoft.com/en-us/security/operations/token-theft-playbook) playbooks.
+To build comprehensive identity compromise response playbooks, familiarize yourself with [phishing](https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing), [password spray](https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-password-spray) and [token theft](https://learn.microsoft.com/en-us/security/operations/token-theft-playbook) response.
 
 Below table summarizes what happens to tokens/cookies after administrative actions:
 
