@@ -7,7 +7,7 @@ tags:
   - Microsoft Entra ID
   - Identity Management
   - Security Operations
-mermaid: true
+mermaid: false
 nav-short: true
 author: Lukasz Kozubal
 ---
