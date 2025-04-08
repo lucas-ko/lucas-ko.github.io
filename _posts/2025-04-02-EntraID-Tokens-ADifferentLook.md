@@ -46,12 +46,18 @@ Below table summarizes what happens to tokens/cookies after administrative actio
 
 ### How to perform admin revocation of all tokens and session cookies?
 
-PowerShell Graph SDK way (required directory roles needed neatly documented [here](https://www.azadvertizer.net/azentraidroleactions/microsoft.directory_users_invalidateallrefreshtokens.html), Graph API permissions [here](https://learn.microsoft.com/en-us/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&tabs=http#permissions]):
+PowerShell Graph SDK way (required directory roles needed neatly documented [here](https://www.azadvertizer.net/azentraidroleactions/microsoft.directory_users_invalidateallrefreshtokens.html)):
 
 ```
 Import-Module Microsoft.Graph.Beta.Users.Actions
 Connect-MgGraph
 Invoke-MgBetaInvalidateAllUserRefreshToken -UserId <UserPrincipalName or object ID>
+```
+
+Graph API way (necessary permissions [here](https://learn.microsoft.com/en-us/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&tabs=http#permissions])):
+
+```
+POST https://graph.microsoft.com/beta/users/{userPrincipalName | id}/invalidateAllRefreshTokens
 ```
 
 ClickOps (GUI) way:<br>
