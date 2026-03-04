@@ -12,14 +12,13 @@ nav-short: true
 author: Lukasz Kozubal
 ---
 
-
-### Introduction - why do we need to protect the authentication factor registration process?
+## Introduction - why do we need to protect the authentication factor registration process?
 I believe we can all agree that relying on the password alone isn't a viable authentication strategy anymore - if it ever truly was.<br>
 As such, enforcing multi-factor authentication for user sign-ins shall be a critical priority for organizations of all sizes.<br>
 Before rolling out strong authentication policies across the organization, it's essential to ensure all users within the tenant can securely register and manage their authentication methods. <br>These methods will play a key role during interactive sign-in scenarios that require strong authentication.<br>
 This post explores how Microsoft Entra ID can help you manage the risks associated with the authentication method registration process, without compromising usability.
 
-### Let's define the outcomes.
+## Let's define the outcomes.
 **To guide our design decisions, let's define the context of an imaginary company.**
 - All corporate devices are Entra ID joined and managed by Intune.
 - The company allows Microsoft Authenticator to be installed and used on unmanaged mobile devices.
@@ -31,7 +30,7 @@ This post explores how Microsoft Entra ID can help you manage the risks associat
 - As an IT service desk personnel, I want a fast and simple troubleshooting process and recovery for end users who cannot access their authentication factors anymore, so that I can be effective at my job.
 - As an IT engineer, I want the all security policies to be deployed without GUI, ideally using automation, so that I can be more efficient and have greater control over the configuration changes impacting that area.
 
-### Policy creation.
+## Policy creation.
 Let's get to work.
 
 One of the solutions supporting the above requirements is a single Entra ID conditional access policy, targeting security info registration user action, and requiring a specific authentication strength or specific device state, i.e. marked as compliant by Microsoft Intune.
@@ -66,7 +65,7 @@ As a result, we can arrive at the following policy definition:
 - **Operational simplicity**
   - Single policy simplifies troubleshooting and debugging.
 
-### Deployment.
+## Deployment.
 
 Let's deploy and materialize that concept!<br>
 Following code uses Microsoft Graph Powershell to achieve this.
@@ -131,7 +130,7 @@ type = "hours"
 New-MgIdentityConditionalAccessPolicy -BodyParameter $CAPolicyParams
 ```
 
-### Things to watch out for.
+## Things to watch out for.
 
 {: .box-note}
 Certain edge cases could be confusing for an end user  - for example,  registering security information using TAP and requirement to change password at the same time is highly confusing and aggressive sign-in frequency (e.g., every time) time just adds to the confusion.<br>
