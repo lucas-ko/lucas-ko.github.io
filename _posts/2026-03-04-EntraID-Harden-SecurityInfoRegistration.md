@@ -134,16 +134,16 @@ New-MgIdentityConditionalAccessPolicy -BodyParameter $CAPolicyParams
 ### Things to watch out for.
 
 {: .box-note}
-	- Certain edge cases could be confusing for an end user  - for example,  registering security information using TAP and requirement to change password at the same time is highly confusing and aggressive sign-in frequency (e.g., every time) time just adds to the confusion.<br>
-	Therefore the sign-in frequency suggested in the policy example has been adjusted to be less aggressive to reduce friction without overly compromising security assurances.
+Certain edge cases could be confusing for an end user  - for example,  registering security information using TAP and requirement to change password at the same time is highly confusing and aggressive sign-in frequency (e.g., every time) time just adds to the confusion.<br>
+Therefore the sign-in frequency suggested in the policy example has been adjusted to be less aggressive to reduce friction without overly compromising security assurances.
 <br><br>
-	- Password change at [https://mysignins.microsoft.com](https://mysignins.microsoft.com) uses security info and is subject to CA policy targeting it.
+Password change at [https://mysignins.microsoft.com](https://mysignins.microsoft.com) uses security info and is subject to CA policy targeting it.
 <br><br>
-	- Passkey creation from an unmanaged device requires admin-issued TAP. Assess such scenario agains your organization risk tolerance.
-	As a best practice, registering passkeys on unmanaged devices should be minimized, as organizations can't really assure desired security properties of biometrics and a complexity of a device PIN which ultimately safeguards access to the passkey.
+Passkey creation from an unmanaged device requires admin-issued TAP. Assess such scenario agains your organization risk tolerance.
+As a best practice, registering passkeys on unmanaged devices should be minimized, as organizations can't really assure desired security properties of biometrics and a complexity of a device PIN which ultimately safeguards access to the passkey.
 <br><br>
-	- For security info registration interrupt mode, the authentication strength is evaluated differently – authentication strengths that target the user action of **Registering security info** override authentication strength requirements from other conditional access policies targeting **All resources**.
-	All other grant controls (such as **Require device to be marked as compliant**) from other conditional access policies in scope for the sign-in will apply as usual.
+For security info registration interrupt mode, the authentication strength is evaluated differently – authentication strengths that target the user action of **Registering security info** override authentication strength requirements from other conditional access policies targeting **All resources**.
+All other grant controls (such as **Require device to be marked as compliant**) from other conditional access policies in scope for the sign-in will apply as usual.
 
 ## Useful resources:
 
