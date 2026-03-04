@@ -134,7 +134,7 @@ New-MgIdentityConditionalAccessPolicy -BodyParameter $CAPolicyParams
 ### Things to watch out for.
 
 {: .box-note}
-	-Certain edge cases could be confusing for an end user  - for example,  registering security information using TAP and requirement to change password at the same time is highly confusing and aggressive sign-in frequency (e.g., every time) time just adds to the confusion.<br>
+	- Certain edge cases could be confusing for an end user  - for example,  registering security information using TAP and requirement to change password at the same time is highly confusing and aggressive sign-in frequency (e.g., every time) time just adds to the confusion.<br>
 	Therefore the sign-in frequency suggested in the policy example has been adjusted to be less aggressive to reduce friction without overly compromising security assurances.
 <br><br>
 	- Password change at [https://mysignins.microsoft.com](https://mysignins.microsoft.com) uses security info and is subject to CA policy targeting it.
