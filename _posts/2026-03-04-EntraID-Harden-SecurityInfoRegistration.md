@@ -25,10 +25,10 @@ This post explores how Microsoft Entra ID can help you manage the risks associat
 - The strategic direction of the company is to adopt phishing-resistant authentication methods. While not enforced tenant-wide yet, the company initially aims to protect access to critical resources, including the security info registration portal.
 
 **To complement already established context, let's consider a few simplified user stories. These will help us further with taking right design choices.**
-- As the end user, I want a straightforward and seamless experience when registering strong authentication factors, either for the first time or when I need to make changes, so that I can easily comply with organizational policies during my sign-ins.
-- As the IT security engineer responsible for the security of my tenant, I want to minimize the risks and configurations that do not generate enough friction for an attacker, so that I can have a high assurance only legitimate users are able to register or manage their authentication methods. 
-- As the IT service desk personnel, I want a fast and simple troubleshooting process and recovery for end users who cannot access their authentication factors anymore, so that I can be effective at my job.
-- As the IT engineer, I want the all security policies to be deployed without GUI, ideally using automation, so that I can be more efficient and have greater control over the configuration changes impacting that area.
+- As an end user, I want a straightforward and seamless experience when registering strong authentication factors, either for the first time or when I need to make changes, so that I can easily comply with organizational policies during my sign-ins.
+- As an IT security engineer responsible for the security of my tenant, I want to minimize the risks and configurations that do not generate enough friction for an attacker, so that I can have a high assurance only legitimate users are able to register or manage their authentication methods. 
+- As an IT service desk personnel, I want a fast and simple troubleshooting process and recovery for end users who cannot access their authentication factors anymore, so that I can be effective at my job.
+- As an IT engineer, I want the all security policies to be deployed without GUI, ideally using automation, so that I can be more efficient and have greater control over the configuration changes impacting that area.
 
 ## Policy creation.
 Let's get to work.
